@@ -8,11 +8,11 @@ export default function ContactPage() {
         </h2>
       </header>
       <p className="text-xl leading-relaxed max-w-3xl mx-auto text-center mb-12" style={{ color: 'var(--secondary-contrast)' }}> {/* Adjusted margin */}
-        Interested in collaborating or have a question? I'd love to hear from you. {/* Updated intro text */}
+        Interested in collaborating or have a question? I&apos;d love to hear from you. {/* Updated intro text */}
       </p>
       <p className="text-xl leading-relaxed max-w-3xl mx-auto text-center mb-24" style={{ color: 'var(--secondary-contrast)' }}>
         The VoxMail tool in the bottom right corner is a great way to leave a message, {/* Updated text */}
-        or if you'd like to schedule a meeting, you can book a time using Calendly below.
+        or if you&apos;d like to schedule a meeting, you can book a time using Calendly below.
       </p>
       <section className="mb-16">
         <h2 className="text-4xl mb-8 text-center">Schedule a Meeting</h2>

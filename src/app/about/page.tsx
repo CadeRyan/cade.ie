@@ -24,13 +24,13 @@ export default function AboutPage() {
         {/* Placeholder Bio Text */}
         <div className="text-center md:text-left flex-grow">
           <p className="text-lg md:text-xl leading-relaxed mb-4" style={{color: "var(--secondary-contrast)"}}>
-            Hi, I'm Cade Ryan, a software engineer originally from Dublin, Ireland, and now based in the vibrant city of Vancouver, BC.
+            Hi, I&apos;m Cade Ryan, a software engineer originally from Dublin, Ireland, and now based in the vibrant city of Vancouver, BC.
           </p>
           <p className="text-lg md:text-xl leading-relaxed mb-4" style={{color: "var(--secondary-contrast)"}}>
             With a passion for technology and problem-solving, I specialize in building robust web applications and bringing digital ideas to life. I enjoy working across the full stack, from crafting intuitive user interfaces to designing scalable backend systems.
           </p>
           <p className="text-lg md:text-xl leading-relaxed" style={{color: "var(--secondary-contrast)"}}>
-            I'm also the founder of Koduu, a software development agency focused on creating innovative solutions for businesses and individuals. My goal is always to leverage technology to create meaningful impact and exceptional user experiences.
+            I&apos;m also the co-founder of Koduu, a software development agency focused on creating innovative solutions for businesses and individuals. My goal is always to leverage technology to create meaningful impact and exceptional user experiences.
           </p>
           {/* Add more paragraphs or sections as needed */}
         </div>

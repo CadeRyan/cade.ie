@@ -38,9 +38,9 @@ export default function HomePage() {
         {/* Replaced TypingHeadline with simple h1 */}
         {/* Added text-pastel-orange */}
         <h1 className="text-5xl md:text-6xl font-semibold mb-8 text-pastel-orange">
-            Hey, I'm Cade,
+            Hey, I&apos;m Cade,
             <br />
-            I'm a software engineer
+            I&apos;m a software engineer
           </h1>
           {/* Removed subheading */}
           {/* Updated paragraph with placeholder bio */}
