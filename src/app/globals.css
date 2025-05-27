@@ -110,33 +110,35 @@
     z-index: -1;
   }
 
-  /* Custom Cursor Styles */
+  /* Custom Cursor Styles - Temporarily removed for background animation testing */
+  /*
   .custom-cursor {
     position: fixed;
-    width: 20px; /* Initial size */
-    height: 20px; /* Initial size */
-    border: 2px solid var(--primary-contrast); /* Use theme color */
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-contrast);
     border-radius: 50%;
-    transform: translate(-50%, -50%); /* Center the cursor */
-    pointer-events: none; /* Allow clicks to pass through */
-    z-index: 9999; /* Ensure it's on top */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-    mix-blend-mode: difference; /* Optional: cool effect */
+    mix-blend-mode: difference;
     background-color: transparent;
   }
 
   .custom-cursor.hover {
-    width: 40px; /* Larger size on hover */
-    height: 40px; /* Larger size on hover */
-    background-color: var(--primary-contrast); /* Fill color on hover */
-    border-color: var(--primary-contrast); /* Match border */
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-contrast);
+    border-color: var(--primary-contrast);
   }
+  */
 
-  /* Hide default cursor (already handled in component JS, but good fallback) */
+  /* Default cursor restored */
   body {
-    cursor: none;
+    cursor: auto;
   }
   a, button, input, textarea, [role="button"] {
-    cursor: none;
+    cursor: pointer;
   }
 }

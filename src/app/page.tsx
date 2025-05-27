@@ -32,12 +32,12 @@ export default function HomePage() {
     <main className="max-w-7xl mx-auto py-16 px-8">
       {/* Hero Section */}
       {/* Changed to flex layout for image placement */}
-      <section className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 mb-16 mt-16 md:mt-32 lg:mt-48 px-4"> 
+      <section className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-16 mb-8 mt-16 md:mt-32 lg:mt-48 px-4">
         {/* Text Content */}
         <div className="text-center md:text-left max-w-xl">
         {/* Replaced TypingHeadline with simple h1 */}
         {/* Added text-pastel-orange */}
-        <h1 className="text-5xl md:text-6xl font-semibold mb-8 text-pastel-orange">
+        <h1 className="text-5xl md:text-6xl font-semibold mb-8 text-white">
             Hey, I&apos;m Cade,
             <br />
             I&apos;m a software engineer
@@ -63,6 +63,13 @@ export default function HomePage() {
              />
            </div>
          </div>
+      </section>
+
+      {/* Instructional Text */}
+      <section className="text-center mb-16 pt-32">
+        <p className="px-4 py-2 rounded-full text-sm font-medium bg-light-teal/10 text-light-teal shadow-inner inline-block mx-auto">
+          Click anywhere to add a node, and this graph will become totally unique to you
+        </p>
       </section>
 
       {/* Featured Projects Section - Commented out for now */}

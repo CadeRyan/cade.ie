@@ -49,15 +49,15 @@ export function Header() {
     <>
       {/* Desktop Header: Floating pill style */}
       <header
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 hidden md:block transition-all duration-300 ${
+        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 hidden md:block transition-all duration-300 w-full max-w-7xl ${
           isScrolled ? 'shadow-md' : '' // Add shadow on scroll
         }`}
       >
         {/* Background with blur and border - updated colors */}
         {/* Applied responsive gap and removed fixed margin from logo link below */}
-        {/* Added w-max to prevent the container itself from shrinking */}
+        {/* Set w-full for the container to match max-w-7xl of the header */}
         {/* Changed 2xl:gap-12 to wide:gap-12 (using custom 1440px breakpoint) */}
-        <div className="flex w-max items-center flex-nowrap md:gap-8 xl:gap-24 wide:gap-48 bg-dark-blue/30 backdrop-blur-sm border border-dark-blue-2/60 rounded-full px-6 py-2 shadow-lg">
+        <div className="flex w-full items-center justify-between flex-nowrap md:gap-8 xl:gap-24 wide:gap-48 bg-dark-blue/30 backdrop-blur-sm border border-dark-blue-2/60 rounded-full px-6 py-2 shadow-lg">
           <Link
             href="/"
             // Replaced text with Image component

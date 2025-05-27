@@ -1,5 +1,5 @@
 import React from 'react';
-// Removed Link import from next/link
+import Link from 'next/link';
 import Image from 'next/image';
 
 // Define the structure for a Project
@@ -8,20 +8,28 @@ export interface Project {
   name: string;
   briefDescription: string;
   imageURL?: string; // Optional image for the project
+  externalLink?: string; // Optional external link for projects without internal pages yet
 }
 
 interface ProjectCardProps {
   project: Project;
 }
 
-// Removed createSlug helper function as project.id is used directly
+// Helper function to create a URL-friendly slug from the project name
+const createSlug = (name: string) => {
+  return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+};
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  // Removed projectSlug variable
+  // Use the project ID directly for internal links instead of generating a slug from the name
+  // Determine the link target: external link if provided, otherwise internal project page
+  const linkHref = project.externalLink ? project.externalLink : `/projects/${project.id}`;
+  // Determine if the link should open in a new tab
+  const linkTarget = project.externalLink ? "_blank" : "_self";
 
   return (
     // Updated styling to match Koduu theme: backdrop-blur, light-teal accents
-    <div className="p-6 rounded-lg backdrop-blur-xxs bg-light-teal/5 border border-light-teal/10 shadow-lg flex flex-col h-full transition-shadow duration-300 hover:shadow-xl">
+    <div className="p-6 rounded-lg backdrop-blur-xxs bg-light-teal/5 border border-light-teal/10 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105">
       {project.imageURL ? (
         <div className="relative h-48 w-full mb-4 rounded overflow-hidden"> {/* Added margin-bottom */}
           <Image
@@ -44,16 +52,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <p className="text-sm text-white/70 flex-grow mb-4">{project.briefDescription}</p>
         {/* Button Area - updated border and button style */}
         <div className="flex justify-start gap-2 mt-auto pt-4 border-t border-light-teal/10">
-          {/* Replaced Link with <a> tag for external linking */}
-          <a
-            href={`https://koduu.com/projects/${project.id}`} // Use project.id for external link to koduu.com
-            target="_blank" // Open in new tab
-            rel="noopener noreferrer" // Security measure for new tabs
+          <Link
+            href={linkHref} // Use determined link href
+            target={linkTarget} // Use determined link target
+            rel={project.externalLink ? "noopener noreferrer" : undefined} // Add rel for external links
             // Button styling matching original Koduu buttons
             className="text-center px-4 py-2 text-sm rounded-md bg-dark-blue-2/50 text-light-teal border border-dark-blue-2 hover:bg-light-teal/20 transition-colors duration-200"
           >
             View Project
-          </a>
+          </Link>
         </div>
       </div>
     </div>

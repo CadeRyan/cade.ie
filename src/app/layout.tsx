@@ -2,9 +2,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-// Removed DotAnimation, Added CustomCursor
 // Import Header removed as it's now handled by LayoutClientWrapper
-import { CustomCursor } from "./components"; 
 import LayoutClientWrapper from './components/LayoutClientWrapper'; // Import the new wrapper
 
 export const metadata: Metadata = {
@@ -34,9 +32,6 @@ export default function RootLayout({
      
       </head>
       <body>
-        {/* <DotAnimation /> Removed */}
-        {/* <div className="dots" /> Removed */}
-        <CustomCursor /> {/* Added CustomCursor component */}
         {/* Wrap children and conditional header logic in the client wrapper */}
         <LayoutClientWrapper>
           {children}

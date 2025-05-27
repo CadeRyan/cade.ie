@@ -3,7 +3,7 @@
 import React from 'react'; // Removed useEffect import
 import { usePathname } from 'next/navigation';
 // Removed Image import as footer image is removed
-import { Header } from './Header'; // Assuming Header is in the same directory or adjust path
+import { Header, TetheredFlow } from './'; // Import components from barrel file
 
 interface LayoutClientWrapperProps {
   children: React.ReactNode;
@@ -16,7 +16,8 @@ export default function LayoutClientWrapper({ children }: LayoutClientWrapperPro
 
   return (
     <>
-      {/* Removed conditional top image rendering from here */}
+      {/* Add TetheredFlow as background on non-wedding pages */}
+      {pathname !== '/wedding' && <TetheredFlow />}
 
       {pathname !== '/wedding' && <Header />} {/* Conditionally render Header */}
       {children}
