@@ -19,9 +19,12 @@ export default function LayoutClientWrapper({ children }: LayoutClientWrapperPro
       {/* Add TetheredFlow as background on non-wedding pages */}
       {pathname !== '/wedding' && <TetheredFlow />}
 
-      {pathname !== '/wedding' && <Header />} {/* Conditionally render Header */}
-      {children}
-      {pathname !== '/wedding' && <div className="bottom-gradient" />} {/* Conditionally render gradient */}
+      {/* Content container with higher z-index */}
+      <div className="relative z-5">
+        {pathname !== '/wedding' && <Header />} {/* Conditionally render Header */}
+        {children}
+        {pathname !== '/wedding' && <div className="bottom-gradient" />} {/* Conditionally render gradient */}
+      </div>
 
       {/* Removed conditional footer image rendering */}
     </>

@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 export default function EspousedProjectPage() {
   return (
-    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300">
+    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300 relative z-10">
       {/* Project Title */}
       <h1 className="text-4xl md:text-5xl font-thin mb-4 text-left">Espoused Productions</h1>
 
       {/* Overview Section */}
-      <section className="mb-12">
+      <section className="mb-12 relative z-10">
         <p className="text-lg md:text-xl mb-6 max-w-3xl text-left">
           We partnered with the innovative improv theatre company, Espoused Productions, to design and develop their complete website. From showcasing their unique shows to implementing a comprehensive admin dashboard and an integrated ticketing system, we built a platform that amplifies their creative voice.
         </p>
@@ -22,8 +22,8 @@ export default function EspousedProjectPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="mb-16">
-        <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1">
+      <section className="mb-16 relative z-10">
+        <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 z-10">
           <Image
             src="/espoused/homescreen.png"
             alt="Espoused Productions website homepage"
@@ -36,17 +36,18 @@ export default function EspousedProjectPage() {
       </section>
 
       {/* About Espoused Productions Section */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-6 text-left">About Espoused Productions: Improv, Artistry, and Connection</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-8 items-center">
           <div className="flex justify-center md:justify-start">
-            <div className="max-w-xs">
+            <div style={{ position: 'relative', zIndex: 20 }} className="max-w-xs">
               <Image
                 src="/espoused/homescreen_mobile.png"
                 alt="Espoused Productions mobile website design"
                 width={300}
                 height={600}
                 className="rounded-lg shadow-lg w-full h-auto"
+                style={{ position: 'relative', zIndex: 20 }}
               />
             </div>
           </div>
@@ -76,7 +77,7 @@ export default function EspousedProjectPage() {
       </section>
 
       {/* Our Comprehensive Web Solution Section */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-6 text-left">Our Comprehensive Web Solution: From Showcase to Sales</h2>
         <div className="mb-8">
           <p className="text-lg mb-6">
@@ -116,14 +117,14 @@ export default function EspousedProjectPage() {
       </section>
 
       {/* Platform Highlights & Functionality */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-8 text-left">Platform Highlights & Functionality</h2>
         
         <div className="space-y-16">
           {/* Frontend Showcase */}
           <section>
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Vibrant Showcasing & Upcoming Events</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/espoused/homescreen.png"
                 alt="Espoused Productions homepage design"
@@ -140,7 +141,7 @@ export default function EspousedProjectPage() {
           {/* Shows Page */}
           <section>
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Detailed Show Information</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/espoused/shows_page.png"
                 alt="Espoused Productions show page design"
@@ -157,7 +158,7 @@ export default function EspousedProjectPage() {
           {/* Admin Dashboard */}
           <section>
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Comprehensive Show Management</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/espoused/admin_dashboard.png"
                 alt="Espoused Productions admin dashboard"
@@ -174,7 +175,7 @@ export default function EspousedProjectPage() {
           {/* Ticketing Configuration */}
           <section>
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Flexible Ticketing Control</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/espoused/ticket_management.png"
                 alt="Espoused Productions ticketing configuration"
@@ -191,7 +192,7 @@ export default function EspousedProjectPage() {
           {/* In-Site Ticket Sales */}
           <section>
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Seamless In-Site Ticketing</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/espoused/in-site_ticket_sales.png"
                 alt="Espoused Productions in-site ticket purchasing"
@@ -208,7 +209,7 @@ export default function EspousedProjectPage() {
       </section>
 
       {/* Technology & Approach */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-6 text-left">Technology & Approach</h2>
         <div>
           <p className="text-lg">
@@ -218,7 +219,7 @@ export default function EspousedProjectPage() {
       </section>
 
       {/* Impact: Empowering Independent Theatre */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-6 text-left">Impact: Empowering Independent Theatre</h2>
         <div>
           <p className="text-lg">

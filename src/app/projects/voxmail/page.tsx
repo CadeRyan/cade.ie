@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 export default function VoxMailProjectPage() {
   return (
-    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300">
+    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300 relative z-10">
       {/* Project Title */}
       <h1 className="text-4xl md:text-5xl font-thin mb-4 text-left">VoxMail</h1>
 
       {/* Overview Section */}
-      <section className="mb-12">
+      <section className="mb-12 relative z-10">
         <p className="text-lg md:text-xl mb-6 max-w-3xl text-left">
           A project focused on creating an intuitive voice-messaging tool for websites, designed to enhance user interaction and accessibility.
         </p>
@@ -22,9 +22,9 @@ export default function VoxMailProjectPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-2xl font-normal mb-4 text-center">The Full Experience</h2>
-        <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1">
+        <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 z-10">
            <Image
             src="/voxmail/Fullexperience.png"
             alt="VoxMail full website experience on tablet"
@@ -37,12 +37,12 @@ export default function VoxMailProjectPage() {
       </section>
 
       {/* Detailed Image Sections */}
-      <div className="space-y-16">
+      <div className="space-y-16 relative z-10">
 
         {/* 1. Initial Sketches */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Initial Sketches</h2>
-          <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+          <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
             <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Sketches.png"
@@ -59,9 +59,9 @@ export default function VoxMailProjectPage() {
         </section>
 
         {/* 2. Branding Guidelines */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Branding Guidelines</h2>
-           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
              <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Branding.png"
@@ -78,9 +78,9 @@ export default function VoxMailProjectPage() {
         </section>
 
         {/* 3. Wireframing */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Wireframing</h2>
-           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
              <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Fidelity wireframe.png"
@@ -97,9 +97,9 @@ export default function VoxMailProjectPage() {
         </section>
 
         {/* 4. Widget Design */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Widget Design</h2>
-           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
              <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Widget.png"
@@ -116,9 +116,9 @@ export default function VoxMailProjectPage() {
         </section>
 
         {/* 5. Widget Interaction Flow */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Widget Interaction Flow</h2>
-           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
              <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Widget interaction.png"
@@ -135,9 +135,9 @@ export default function VoxMailProjectPage() {
         </section>
 
         {/* 6. Accessibility Testing */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Accessibility Testing</h2>
-           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
              <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Accessibility.png"
@@ -154,9 +154,9 @@ export default function VoxMailProjectPage() {
         </section>
 
         {/* 7. Multi-Device Responsiveness */}
-        <section className="text-neutral-900">
+        <section className="text-neutral-900 relative z-10">
           <h2 className="text-3xl font-normal mb-4 text-left text-neutral-300">Multi-Device Responsiveness</h2>
-           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md">
+           <div className="bg-[#F5F5F7] p-4 rounded-lg mb-4 shadow-md relative z-10">
              <div className="relative w-full h-auto aspect-video overflow-hidden">
               <Image
                 src="/voxmail/Collage.png"

@@ -13,12 +13,6 @@ export default function ProjectsPage() {
       imageURL: '/espoused/homescreen.png'
     },
     {
-      id: 'bizcrunch',
-      name: 'Bizcrunch',
-      briefDescription: 'UK business marketplace helping entrepreneurs buy and sell companies.',
-      imageURL: '/bizcrunch/Enter Advanced filters.png'
-    },
-    {
       id: 'voxmail',
       name: 'VoxMail',
       briefDescription: 'Your customer\'s voice, Amplified.',
@@ -47,10 +41,9 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32"> {/* Updated top margin for new header */}
-      <h1 className="text-4xl font-thin mb-12 text-center">Our Projects</h1>
+    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 relative z-5"> {/* Updated top margin for new header */}
       {/* Grid layout for project cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         {allProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

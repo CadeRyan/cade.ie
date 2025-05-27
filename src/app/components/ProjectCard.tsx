@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     // Updated styling to match Koduu theme: backdrop-blur, light-teal accents
-    <div className="p-6 rounded-lg backdrop-blur-xxs bg-light-teal/5 border border-light-teal/10 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105">
+    <div className="p-6 rounded-lg backdrop-blur-xxs bg-light-teal/5 border border-light-teal/10 shadow-lg flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:scale-105 relative z-10">
       {project.imageURL ? (
         <div className="relative h-48 w-full mb-4 rounded overflow-hidden"> {/* Added margin-bottom */}
           <Image

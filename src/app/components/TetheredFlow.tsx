@@ -388,7 +388,7 @@ const TetheredFlow = () => {
       left: 0,
       width: '100vw',
       height: '100vh',
-      zIndex: 0, // Moved to 0 to be above truly background elements but below content
+      zIndex: 1, // Keep small positive value for interactivity
       pointerEvents: 'none' // Allow clicks to pass through to elements behind
     }}>
       <canvas

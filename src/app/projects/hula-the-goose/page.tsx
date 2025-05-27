@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HulaTheGooseProjectPage() {
   return (
-    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300">
+    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300 relative z-5">
       {/* Project Title */}
       <h1 className="text-4xl md:text-5xl font-thin mb-4 text-left">Hula the Goose</h1>
 
@@ -15,7 +15,7 @@ export default function HulaTheGooseProjectPage() {
         <div className="flex justify-between items-center gap-4 mb-8">
           <p className="text-md text-neutral-400">Crafting Digital Whimsy for an Indie Game</p>
           <Link href="https://hulathegoose.com/" target="_blank" rel="noopener noreferrer"
-                className="px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors duration-200 text-white/80 hover:bg-light-teal/10 hover:text-light-teal border border-white/30 hover:border-light-teal/50">
+                className="px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors duration-200 text-white/80 hover:bg-light-teal/10 hover:text-light-teal border border-white/30 hover:border-light-teal/50 relative z-10">
             Visit Hula the Goose
           </Link>
         </div>
@@ -23,7 +23,7 @@ export default function HulaTheGooseProjectPage() {
 
       {/* Hero Image */}
       <section className="mb-16">
-        <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1">
+        <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 z-10">
           <Image
             src="/hula/hula_homepage.png"
             alt="Hula the Goose website homepage"
@@ -42,7 +42,7 @@ export default function HulaTheGooseProjectPage() {
           <p className="text-lg mb-6 text-neutral-400">
             Ryan, founder of Your Studios, shares his experience working with us on bringing Hula the Goose&apos;s digital presence to life.
           </p>
-          <div className="relative w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1">
+          <div className="relative w-full overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 z-10">
             <video 
               controls 
               className="w-full h-auto rounded-md"
@@ -62,7 +62,7 @@ export default function HulaTheGooseProjectPage() {
       <section className="mb-16">
         <h2 className="text-3xl font-normal mb-6 text-left">About Hula the Goose: A Charming Relationship Builder</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1">
+          <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 z-10">
             <Image
               src="/hula/promo-shot.png"
               alt="Hula the Goose promotional artwork"
@@ -145,7 +145,7 @@ export default function HulaTheGooseProjectPage() {
           {/* Character Introduction */}
           <section className="text-neutral-900">
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Meet the Cast</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/hula/characters_page.png"
                 alt="Hula the Goose characters page design"
@@ -163,7 +163,7 @@ export default function HulaTheGooseProjectPage() {
           {/* Mobile Experience */}
           <section className="text-neutral-900">
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Mobile Experience</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/hula/mobile_homepage.jpg"
                 alt="Hula the Goose mobile homepage design"
@@ -181,7 +181,7 @@ export default function HulaTheGooseProjectPage() {
           {/* Visual Storytelling */}
           <section className="text-neutral-900">
             <h3 className="text-2xl font-normal mb-4 text-left text-neutral-300">Visual Storytelling</h3>
-            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4">
+            <div className="relative w-full h-auto overflow-hidden rounded-lg shadow-lg bg-neutral-800 p-1 mb-4 z-10">
               <Image
                 src="/hula/promo-shot.png"
                 alt="Hula the Goose promotional artwork showcase"

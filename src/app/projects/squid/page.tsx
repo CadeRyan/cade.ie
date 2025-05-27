@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 export default function SquidProjectPage() {
   return (
-    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300">
+    <main className="max-w-7xl mx-auto py-16 px-8 mt-24 md:mt-32 text-neutral-300 relative z-10">
       {/* Project Title */}
       <h1 className="text-4xl md:text-5xl font-thin mb-4 text-left">Squid Loyalty</h1>
 
       {/* Overview Section */}
-      <section className="mb-12">
+      <section className="mb-12 relative z-10">
         <p className="text-lg md:text-xl mb-6 max-w-3xl text-left">
           We partnered with Squid to build their comprehensive digital loyalty platform from the ground up. From the customer-facing iOS and Android apps to the business client web app, backend systems, and intricate CRM integrations, we engineered the entire ecosystem that powers Squid&apos;s innovative approach to customer rewards.
         </p>
@@ -22,9 +22,9 @@ export default function SquidProjectPage() {
       </section>
 
       {/* Hero Image */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <div className="flex justify-center">
-          <div className="relative mx-auto">
+          <div className="relative mx-auto z-10">
             <Image
               src="/squid/hero_img.png"
               alt="Squid Loyalty app interface showing digital wallet"
@@ -38,11 +38,11 @@ export default function SquidProjectPage() {
       </section>
 
       {/* About Squid Section */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-6 text-left">About Squid: Seamless Digital Loyalty for Modern Businesses & Customers</h2>
         <div className="grid md:grid-cols-2 gap-8 mb-8 items-center">
           <div className="flex justify-center md:justify-start">
-            <div className="max-w-xs">
+            <div className="max-w-xs relative z-10">
               <Image
                 src="/squid/IMG_9609.PNG"
                 alt="Squid app showing loyalty card details and rewards"
@@ -78,7 +78,7 @@ export default function SquidProjectPage() {
       </section>
 
       {/* Key Features Section */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-8 text-left">Key Platform Features</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -87,7 +87,7 @@ export default function SquidProjectPage() {
             <p className="text-base mb-3">
               A comprehensive digital wallet for storing and managing all loyalty cards in one convenient mobile app, eliminating the need for physical cards.
             </p>
-            <div className="relative w-full h-48 overflow-hidden rounded">
+            <div className="relative w-full h-48 overflow-hidden rounded z-10">
               <Image
                 src="/squid/IMG_9608.PNG"
                 alt="Squid digital wallet interface"
@@ -103,7 +103,7 @@ export default function SquidProjectPage() {
             <p className="text-base mb-3">
               Seamless tap-to-collect functionality using NFC technology, making it effortless for customers to earn stamps and rewards.
             </p>
-            <div className="relative w-full h-48 overflow-hidden rounded">
+            <div className="relative w-full h-48 overflow-hidden rounded z-10">
               <Image
                 src="/squid/IMG_9610.PNG"
                 alt="Squid tap to collect interface"
@@ -119,7 +119,7 @@ export default function SquidProjectPage() {
             <p className="text-base mb-3">
               Integrated map and discovery features that help users find new local businesses that offer loyalty rewards through the Squid platform.
             </p>
-            <div className="relative w-full h-48 overflow-hidden rounded">
+            <div className="relative w-full h-48 overflow-hidden rounded z-10">
               <Image
                 src="/squid/IMG_9615.PNG"
                 alt="Squid business discovery map"
@@ -133,7 +133,7 @@ export default function SquidProjectPage() {
       </section>
 
       {/* Our Contribution Section */}
-      <section className="mb-16">
+      <section className="mb-16 relative z-10">
         <h2 className="text-3xl font-normal mb-6 text-left">Our End-to-End Solution</h2>
         <div>
           <p className="text-lg mb-4">

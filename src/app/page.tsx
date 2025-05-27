@@ -52,7 +52,7 @@ export default function HomePage() {
           </p>
         </div>
         {/* Tilted Image */}
-        <div className="flex-shrink-0 transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out">
+        <div className="flex-shrink-0 transform rotate-3 hover:rotate-0 transition-transform duration-300 ease-in-out relative z-10">
            <div className="relative h-64 w-64 md:h-80 md:w-80 rounded-lg overflow-hidden shadow-xl border-4 border-dark-blue-2/50">
              <Image
                src="/Cade.jpg" // Assuming the image path is still correct in /public
