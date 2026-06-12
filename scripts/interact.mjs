@@ -36,11 +36,55 @@ async function newPage(opts = {}) {
   console.log("hover preview captured");
 
   // ── 2. click through with transition ──
+  // The overlay must cover the viewport BEFORE the URL changes, then sweep away.
+  const overlayState = () =>
+    page.evaluate(() => {
+      const el = document.querySelector("[data-transition-overlay]");
+      if (!el) return { found: false };
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      return {
+        found: true,
+        coversCenter: r.top <= vh / 2 && r.bottom >= vh / 2,
+        rising: r.top < vh * 0.8, // visibly entered the viewport
+        top: Math.round(r.top),
+        path: location.pathname,
+      };
+    });
+
+  // Poll through the transition. The invariant: the path may only change
+  // while the overlay covers the viewport.
   await row.click();
-  await page.waitForTimeout(300); // mid-wipe
-  await page.screenshot({ path: `${OUT}/it-transition-mid.png` });
-  await page.waitForTimeout(1600);
-  console.log("url after transition:", page.url());
+  let sawRiseBeforeNav = false;
+  let coveredAtNav = false;
+  let navHappened = false;
+  let shotTaken = false;
+  for (let t = 0; t < 2000; t += 60) {
+    const s = await overlayState();
+    if (s.rising && s.path === "/") sawRiseBeforeNav = true;
+    if (!shotTaken && s.rising) {
+      shotTaken = true;
+      await page.screenshot({ path: `${OUT}/it-transition-mid.png` });
+    }
+    if (s.path !== "/") {
+      navHappened = true;
+      coveredAtNav = s.coversCenter;
+      break;
+    }
+    await page.waitForTimeout(60);
+  }
+  if (!sawRiseBeforeNav) console.log("FAIL: overlay never entered viewport before navigation");
+  if (!navHappened) console.log("FAIL: navigation never happened");
+  if (navHappened && !coveredAtNav) console.log("FAIL: overlay not covering when path changed");
+
+  await page.waitForTimeout(1500); // out complete
+  const done = await overlayState();
+  console.log("transition done:", JSON.stringify(done), "url:", page.url());
+  if (done.coversCenter) console.log("FAIL: overlay stuck covering");
+  if (!page.url().endsWith("/work/squid")) console.log("FAIL: wrong destination");
+  else if (sawRiseBeforeNav && coveredAtNav) {
+    console.log("transition OK: rose before nav, covered at nav, revealed after");
+  }
   await page.screenshot({ path: `${OUT}/it-transition-done.png` });
   await page.close();
 }

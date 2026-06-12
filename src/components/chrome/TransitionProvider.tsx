@@ -39,6 +39,14 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
   const animating = useRef(false);
   const [label, setLabel] = useState("");
 
+  // Park the overlay below the viewport with GSAP owning the transform.
+  // (An inline CSS translateY(100%) would be parsed by GSAP as a pixel offset
+  // and silently shift every yPercent tween by a full screen height.)
+  useEffect(() => {
+    if (!overlayRef.current) return;
+    gsap.set(overlayRef.current, { yPercent: 100, visibility: "visible" });
+  }, []);
+
   const navigate = useCallback(
     (href: string) => {
       if (animating.current || href === pathname) return;
@@ -50,38 +58,36 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
 
       animating.current = true;
       setLabel(LABELS.find((l) => l.match(href))?.label ?? "");
+      // Warm the route while the overlay covers the page.
+      router.prefetch(href);
 
-      gsap.fromTo(
-        overlayRef.current,
-        { yPercent: 100 },
-        {
-          yPercent: 0,
-          duration: 0.55,
-          ease: "expo.inOut",
-          onComplete: () => {
-            covering.current = true;
-            router.push(href);
-          },
-        }
-      );
+      gsap.to(overlayRef.current, {
+        yPercent: 0,
+        duration: 0.45,
+        ease: "expo.inOut",
+        onComplete: () => {
+          covering.current = true;
+          router.push(href);
+        },
+      });
       if (labelRef.current) {
         gsap.fromTo(
           labelRef.current,
           { yPercent: 120, opacity: 0 },
-          { yPercent: 0, opacity: 1, duration: 0.5, ease: "expo.out", delay: 0.25 }
+          { yPercent: 0, opacity: 1, duration: 0.45, ease: "expo.out", delay: 0.18 }
         );
       }
     },
     [pathname, router]
   );
 
-  // When the new route has rendered, sweep the overlay away.
+  // When the new route has rendered (under the overlay), sweep it away.
   useEffect(() => {
     if (!covering.current || !overlayRef.current) return;
-    const tl = gsap.timeline({ delay: 0.12 });
+    const tl = gsap.timeline({ delay: 0.1 });
     tl.to(overlayRef.current, {
       yPercent: -100,
-      duration: 0.7,
+      duration: 0.6,
       ease: "expo.inOut",
       onComplete: () => {
         covering.current = false;
@@ -90,7 +96,7 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
       },
     });
     if (labelRef.current) {
-      tl.to(labelRef.current, { opacity: 0, duration: 0.25 }, 0);
+      tl.to(labelRef.current, { opacity: 0, duration: 0.2 }, 0);
     }
     return () => {
       tl.kill();
@@ -103,8 +109,9 @@ export function TransitionProvider({ children }: { children: ReactNode }) {
       <div
         ref={overlayRef}
         aria-hidden
+        data-transition-overlay
         className="fixed inset-0 z-[150] flex items-center justify-center bg-ink-2"
-        style={{ transform: "translateY(100%)" }}
+        style={{ visibility: "hidden" }}
       >
         <div
           className="absolute inset-x-0 top-0 h-px"
