@@ -1,42 +1,78 @@
-// Removed 'use client' and usePathname import
-import type { Metadata } from "next";
-
+import type { Metadata, Viewport } from "next";
+import { Archivo, Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
-// Import Header removed as it's now handled by LayoutClientWrapper
-import LayoutClientWrapper from './components/LayoutClientWrapper'; // Import the new wrapper
+import SiteChrome from "@/components/chrome/SiteChrome";
+import { site } from "@/lib/site";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  axes: ["wdth"],
+  display: "swap",
+});
+
+const instrument = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  variable: "--font-plex-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Cade Ryan",
-  description: "Cade Ryan - Software Engineer based in Vancouver, BC. Building innovative digital solutions.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} — ${site.role}`,
+    template: `%s — ${site.name}`,
+  },
+  description: site.description,
+  openGraph: {
+    title: `${site.name} — ${site.role}`,
+    description: site.description,
+    url: site.url,
+    siteName: site.name,
+    locale: "en_IE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description: site.description,
+  },
+  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0A0E13",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // Removed pathname logic
   return (
-    <html lang="en" className="dark-theme">
+    <html
+      lang="en"
+      className={`${archivo.variable} ${instrument.variable} ${plexMono.variable}`}
+    >
       <head>
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/koduu_favicon.svg" type="image/svg+xml" />
-        
+        {/* progressive enhancement flag: reveal styles only apply when JS runs */}
         <script
-            type="application/javascript"
-            id="voxMailScript"
-            data-serviceID="8a15c64efd7ec"
-            async
-            defer
-            src="https://us-central1-vcml-7b6cd.cloudfunctions.net/getScript?serviceID=8a15c64efd7ec"
-        ></script>
-     
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js');",
+          }}
+        />
       </head>
       <body>
-        {/* Wrap children and conditional header logic in the client wrapper */}
-        <LayoutClientWrapper>
-          {children}
-        </LayoutClientWrapper>
-        {/* Removed bottom-gradient div, now handled by LayoutClientWrapper */}
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

@@ -1,33 +1,108 @@
+import type { Metadata } from "next";
+import VoxMailWidget from "@/components/ui/VoxMailWidget";
+import LocalTime from "@/components/ui/LocalTime";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Cade Ryan — email, Calendly, or leave a voice note with the VoxMail widget.",
+};
+
 export default function ContactPage() {
   return (
-    <main className="max-w-7xl mx-auto pt-48 pb-12 px-8">
-      <header className="text-center mb-12">
-        <h1 className="text-5xl font-thin mb-4">Contact Me</h1> {/* Updated heading */}
-        <h2 className="text-2xl font-thin" style={{ color: 'var(--secondary-contrast)' }}>
-          Get in touch {/* Updated subheading */}
-        </h2>
-      </header>
-      <p className="text-xl leading-relaxed max-w-3xl mx-auto text-center mb-12" style={{ color: 'var(--secondary-contrast)' }}> {/* Adjusted margin */}
-        Interested in collaborating or have a question? I&apos;d love to hear from you. {/* Updated intro text */}
-      </p>
-      <p className="text-xl leading-relaxed max-w-3xl mx-auto text-center mb-24" style={{ color: 'var(--secondary-contrast)' }}>
-        The VoxMail tool in the bottom right corner is a great way to leave a message, {/* Updated text */}
-        or if you&apos;d like to schedule a meeting, you can book a time using Calendly below.
-      </p>
-      <section className="mb-16">
-        <h2 className="text-4xl mb-8 text-center">Schedule a Meeting</h2>
+    <>
+      <VoxMailWidget />
 
-        <div className="text-center">
+      {/* title band */}
+      <section className="flex min-h-[58svh] flex-col justify-end px-5 pb-10 md:px-10">
+        <p className="meta-label mb-4 text-bone-dim" data-reveal="fade">
+          ( Contact )
+        </p>
+        <h1 className="display text-display-lg text-bone" data-reveal="lines">
+          Get in touch
+        </h1>
+        <p className="mt-6 max-w-lg text-base leading-relaxed text-bone-dim" data-reveal="fade" data-reveal-delay="0.15">
+          Interested in collaborating, want to talk shop, or just have a
+          question? I&rsquo;d love to hear from you — pick whichever channel
+          suits you.
+        </p>
+      </section>
+
+      <div className="bg-ink px-5 py-20 md:px-10 md:py-28">
+        {/* email */}
+        <div className="hairline-t pt-8">
+          <p className="meta-label mb-5 text-ember" data-reveal="fade">
+            (01) — Email
+          </p>
           <a
-            href="https://calendly.com/cade-vox-mail"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border-light-teal/10 text-primary-contrast font-bold bg-light-teal/10 border rounded-lg px-8 py-4 transition-colors duration-200 hover:bg-light-teal/20 hover:border-light-teal/20 motion-preset-rebound-up motion-delay-400"
+            href={`mailto:${site.email}`}
+            className="display block break-all text-display-sm text-bone transition-colors duration-300 hover:text-ember md:break-normal"
+            data-reveal="lines"
           >
-            Book with Calendly
+            {site.email}
           </a>
         </div>
-      </section>
-    </main>
+
+        <div className="mt-20 grid gap-px overflow-hidden rounded-md border border-hairline bg-hairline md:grid-cols-3" data-reveal="stagger">
+          {/* calendly */}
+          <article className="flex flex-col justify-between gap-14 bg-ink p-7 md:p-9">
+            <div>
+              <p className="meta-label mb-4 text-ember">(02) — Book a call</p>
+              <p className="text-sm leading-relaxed text-bone-dim">
+                Twenty minutes, no agenda needed. Pick a time that works for you and
+                let&rsquo;s talk through your idea.
+              </p>
+            </div>
+            <a
+              href={site.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="meta-label inline-block self-start rounded-full border border-hairline px-5 py-3 text-bone-dim transition-colors duration-300 hover:border-bone hover:text-bone"
+            >
+              Book with Calendly ↗
+            </a>
+          </article>
+
+          {/* voxmail */}
+          <article className="flex flex-col justify-between gap-14 bg-ink p-7 md:p-9">
+            <div>
+              <p className="meta-label mb-4 text-ember">(03) — Say it out loud</p>
+              <p className="text-sm leading-relaxed text-bone-dim">
+                The widget in the corner of this page is VoxMail — my own product.
+                Tap it, talk, and your voice note lands straight with me. The best
+                kind of dogfooding.
+              </p>
+            </div>
+            <p className="meta-label text-bone-faint">Look bottom-right ↘</p>
+          </article>
+
+          {/* timezones */}
+          <article className="flex flex-col justify-between gap-14 bg-ink p-7 md:p-9">
+            <div>
+              <p className="meta-label mb-4 text-ember">(04) — Hours</p>
+              <p className="text-sm leading-relaxed text-bone-dim">
+                I work from the Pacific coast and overlap generously with European
+                mornings and North American afternoons.
+              </p>
+            </div>
+            <dl className="meta-label space-y-2 text-bone-dim">
+              <div className="flex items-center justify-between gap-6">
+                <dt className="text-bone-faint">Vancouver</dt>
+                <dd>
+                  <LocalTime timezone={site.location.timezone} />
+                </dd>
+              </div>
+              <div className="flex items-center justify-between gap-6">
+                <dt className="text-bone-faint">Dublin</dt>
+                <dd>
+                  <LocalTime timezone={site.location.originTimezone} />
+                </dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </>
   );
 }
