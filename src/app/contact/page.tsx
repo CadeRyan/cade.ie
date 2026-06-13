@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import VoxMailWidget from "@/components/ui/VoxMailWidget";
 import LocalTime from "@/components/ui/LocalTime";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Cade Ryan — email, Calendly, or leave a voice note with the VoxMail widget.",
+    "Get in touch with Cade Ryan — email, Calendly, or LinkedIn.",
 };
 
 export default function ContactPage() {
   return (
     <>
-      <VoxMailWidget />
-
       {/* title band */}
       <section className="flex min-h-[58svh] flex-col justify-end px-5 pb-10 md:px-10">
         <p className="meta-label mb-4 text-bone-dim" data-reveal="fade">
@@ -64,17 +61,23 @@ export default function ContactPage() {
             </a>
           </article>
 
-          {/* voxmail */}
+          {/* linkedin */}
           <article className="flex flex-col justify-between gap-14 bg-ink p-7 md:p-9">
             <div>
-              <p className="meta-label mb-4 text-ember">(03) — Say it out loud</p>
+              <p className="meta-label mb-4 text-ember">(03) — LinkedIn</p>
               <p className="text-sm leading-relaxed text-bone-dim">
-                The widget in the corner of this page is VoxMail — my own product.
-                Tap it, talk, and your voice note lands straight with me. The best
-                kind of dogfooding.
+                For the professional context — my working history in full, and a
+                DM inbox I actually check.
               </p>
             </div>
-            <p className="meta-label text-bone-faint">Look bottom-right ↘</p>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="meta-label inline-block self-start rounded-full border border-hairline px-5 py-3 text-bone-dim transition-colors duration-300 hover:border-bone hover:text-bone"
+            >
+              Connect on LinkedIn ↗
+            </a>
           </article>
 
           {/* timezones */}

@@ -3,9 +3,10 @@ export const site = {
   role: "Software Engineer & Maker",
   url: "https://cade.ie",
   description:
-    "Cade Ryan — Dublin-born software engineer based in Vancouver, BC. Engineering Manager at Aritzia, and builder of products and platforms end-to-end — from VoxMail to The Fools' Guild.",
+    "Cade Ryan — Dublin-born software engineer based in Vancouver, BC. Engineering Manager at Aritzia, and builder of products and platforms end-to-end — like The Fools' Guild, Vancouver's fantasy improv troupe.",
   email: "caderyan07@gmail.com",
   calendly: "https://calendly.com/cade-vox-mail",
+  linkedin: "https://www.linkedin.com/in/caderyan/",
   job: {
     title: "Engineering Manager",
     team: "Concierge Technology",

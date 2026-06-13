@@ -141,94 +141,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "voxmail",
-    title: "VoxMail",
-    short: "Voice messaging for the web",
-    category: "Product — SaaS",
-    role: "Founder · Design & Engineering",
-    scope: ["Product", "Web platform", "Embeddable widget", "Brand"],
-    credit: "UI/UX design with Susanne Duswald",
-    link: { href: "https://vox-mail.com/", label: "vox-mail.com" },
-    tagline: "Your customers' voice, amplified.",
-    intro: [
-      "VoxMail is my own product — an intuitive voice-messaging tool for websites. A small widget sits in the corner of any site and lets visitors leave a voice message instead of typing into a form, making feedback faster, warmer and more accessible.",
-      "I built the product end-to-end; the UI/UX design was crafted with Susanne Duswald. From first sketches to a shipped, embeddable tool, every detail was tested against one question: does this make it easier for people to be heard?",
-    ],
-    cover: {
-      src: "/voxmail/Fullexperience.png",
-      alt: "VoxMail full website experience rendered on an iPad Pro",
-      caption: "The full VoxMail experience, rendered on an iPad Pro.",
-    },
-    preview: "/voxmail/VoxMail Master - web.png",
-    sections: [
-      {
-        kicker: "Process",
-        heading: "From sketches to system",
-        body: [
-          "Everything started on paper — early-stage brainstorming and layout exploration through hand-drawn sketches that formed the foundation of the interface before a single pixel was placed.",
-          "Those sketches matured into high-fidelity wireframes in Figma, locking the website structure, content placement and user flow before final design implementation.",
-        ],
-        images: [
-          { src: "/voxmail/Sketches.png", alt: "Initial hand-drawn UI/UX sketches for VoxMail" },
-          { src: "/voxmail/Fidelity wireframe.png", alt: "High-fidelity wireframes for the VoxMail website" },
-        ],
-        layout: "full",
-      },
-      {
-        kicker: "Identity",
-        heading: "A brand built to speak",
-        body: [
-          "The visual identity — a focused colour palette and typography system — runs through the marketing site and the widget itself, so VoxMail feels like one product wherever it shows up.",
-        ],
-        images: [
-          { src: "/voxmail/Branding.png", alt: "VoxMail branding: colour palette and typography" },
-        ],
-        layout: "full",
-      },
-      {
-        kicker: "The product",
-        heading: "A widget with manners",
-        body: [
-          "The core of VoxMail is the widget that lives on client websites. Every screen and state was designed in Figma, then mapped into a full interaction flow — the paths, logic and edge cases a visitor can take while recording and sending a voice message.",
-          "The result is a tool that stays out of the way until it's needed, then makes leaving a message feel effortless.",
-        ],
-        images: [
-          { src: "/voxmail/Widget.png", alt: "Figma renders of the VoxMail widget screens and states" },
-          { src: "/voxmail/Widget interaction.png", alt: "Flow chart of the VoxMail widget's interaction logic" },
-        ],
-        layout: "full",
-      },
-      {
-        kicker: "Accessibility",
-        heading: "Tested for every kind of sight",
-        body: [
-          "The palette and contrast levels were tested against multiple forms of colour-vision deficiency — Deuteranopia, Tritanopia and Protanopia — so the product reads clearly for everyone, not just most people.",
-        ],
-        images: [
-          { src: "/voxmail/Accessibility.png", alt: "Colour-contrast accessibility testing for VoxMail" },
-        ],
-        layout: "full",
-      },
-      {
-        kicker: "Responsive",
-        heading: "Every screen, every device",
-        body: [
-          "Website and widget were designed and built to adapt across desktop, tablet and mobile — same brand, same clarity, optimal layout at every size.",
-        ],
-        images: [
-          { src: "/voxmail/Collage.png", alt: "VoxMail website and widget across desktop, tablet and mobile" },
-        ],
-        layout: "full",
-      },
-    ],
-    outcome: {
-      heading: "A product that listens",
-      body: [
-        "VoxMail shipped as a live SaaS — you can try the widget in the corner of this site's contact page. It's the clearest expression of how I like to build: design and engineering as one continuous craft.",
-      ],
-    },
-  },
-  {
     slug: "squid",
     title: "Squid Loyalty",
     short: "Digital loyalty, end to end",
@@ -385,6 +297,94 @@ export const projects: Project[] = [
       heading: "Euphoria in every turn",
       body: [
         "A robust, mobile-first platform on a thoughtful design system — giving ShredVision the foundation to grow into the go-to resource for personalised snow-sports coaching.",
+      ],
+    },
+  },
+  {
+    slug: "voxmail",
+    title: "VoxMail",
+    short: "Voice messaging for the web",
+    category: "Product — SaaS",
+    role: "Founder · Design & Engineering",
+    scope: ["Product", "Web platform", "Embeddable widget", "Brand"],
+    credit: "UI/UX design with Susanne Duswald",
+    link: { href: "https://vox-mail.com/", label: "vox-mail.com" },
+    tagline: "Your customers' voice, amplified.",
+    intro: [
+      "VoxMail is my own product — an intuitive voice-messaging tool for websites. A small widget sits in the corner of any site and lets visitors leave a voice message instead of typing into a form, making feedback faster, warmer and more accessible.",
+      "I built the product end-to-end; the UI/UX design was crafted with Susanne Duswald. From first sketches to a shipped, embeddable tool, every detail was tested against one question: does this make it easier for people to be heard?",
+    ],
+    cover: {
+      src: "/voxmail/Fullexperience.png",
+      alt: "VoxMail full website experience rendered on an iPad Pro",
+      caption: "The full VoxMail experience, rendered on an iPad Pro.",
+    },
+    preview: "/voxmail/VoxMail Master - web.png",
+    sections: [
+      {
+        kicker: "Process",
+        heading: "From sketches to system",
+        body: [
+          "Everything started on paper — early-stage brainstorming and layout exploration through hand-drawn sketches that formed the foundation of the interface before a single pixel was placed.",
+          "Those sketches matured into high-fidelity wireframes in Figma, locking the website structure, content placement and user flow before final design implementation.",
+        ],
+        images: [
+          { src: "/voxmail/Sketches.png", alt: "Initial hand-drawn UI/UX sketches for VoxMail" },
+          { src: "/voxmail/Fidelity wireframe.png", alt: "High-fidelity wireframes for the VoxMail website" },
+        ],
+        layout: "full",
+      },
+      {
+        kicker: "Identity",
+        heading: "A brand built to speak",
+        body: [
+          "The visual identity — a focused colour palette and typography system — runs through the marketing site and the widget itself, so VoxMail feels like one product wherever it shows up.",
+        ],
+        images: [
+          { src: "/voxmail/Branding.png", alt: "VoxMail branding: colour palette and typography" },
+        ],
+        layout: "full",
+      },
+      {
+        kicker: "The product",
+        heading: "A widget with manners",
+        body: [
+          "The core of VoxMail is the widget that lives on client websites. Every screen and state was designed in Figma, then mapped into a full interaction flow — the paths, logic and edge cases a visitor can take while recording and sending a voice message.",
+          "The result is a tool that stays out of the way until it's needed, then makes leaving a message feel effortless.",
+        ],
+        images: [
+          { src: "/voxmail/Widget.png", alt: "Figma renders of the VoxMail widget screens and states" },
+          { src: "/voxmail/Widget interaction.png", alt: "Flow chart of the VoxMail widget's interaction logic" },
+        ],
+        layout: "full",
+      },
+      {
+        kicker: "Accessibility",
+        heading: "Tested for every kind of sight",
+        body: [
+          "The palette and contrast levels were tested against multiple forms of colour-vision deficiency — Deuteranopia, Tritanopia and Protanopia — so the product reads clearly for everyone, not just most people.",
+        ],
+        images: [
+          { src: "/voxmail/Accessibility.png", alt: "Colour-contrast accessibility testing for VoxMail" },
+        ],
+        layout: "full",
+      },
+      {
+        kicker: "Responsive",
+        heading: "Every screen, every device",
+        body: [
+          "Website and widget were designed and built to adapt across desktop, tablet and mobile — same brand, same clarity, optimal layout at every size.",
+        ],
+        images: [
+          { src: "/voxmail/Collage.png", alt: "VoxMail website and widget across desktop, tablet and mobile" },
+        ],
+        layout: "full",
+      },
+    ],
+    outcome: {
+      heading: "A product that listens",
+      body: [
+        "VoxMail shipped as a live SaaS, with the widget running on client sites today. It's a clear expression of how I like to build: design and engineering as one continuous craft.",
       ],
     },
   },

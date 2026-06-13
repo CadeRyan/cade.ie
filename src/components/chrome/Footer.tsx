@@ -70,22 +70,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://vox-mail.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-line text-sm text-bone-dim transition-colors hover:text-bone"
-                >
-                  VoxMail ↗
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://foolsguild.ca/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-line text-sm text-bone-dim transition-colors hover:text-bone"
                 >
                   The Fools&rsquo; Guild ↗
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-line text-sm text-bone-dim transition-colors hover:text-bone"
+                >
+                  LinkedIn ↗
                 </a>
               </li>
               <li>

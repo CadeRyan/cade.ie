@@ -83,7 +83,7 @@ export default function HomePage() {
           {[
             "Selected work",
             "Fools' Guild",
-            "VoxMail",
+            "Maker",
             "Dublin",
             "Vancouver",
             "Design",
@@ -132,8 +132,8 @@ export default function HomePage() {
                 Dublin-born, Vancouver-based. By day I lead the Concierge
                 Technology team at{" "}
                 <span className="serif-accent text-ember">Aritzia</span> — and by
-                night I build my own things, like VoxMail and The Fools&rsquo;
-                Guild.
+                night I build my own things, like The Fools&rsquo; Guild and its
+                box office.
               </p>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-bone-dim" data-reveal="fade">
                 From a fantasy-improv box office to NFC loyalty ecosystems, I work

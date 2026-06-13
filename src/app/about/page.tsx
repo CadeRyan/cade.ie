@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cade Ryan — Dublin-born software engineer in Vancouver, BC. Engineering Manager at Aritzia; previously Microsoft and co-founder of Koduu. Builder of VoxMail and The Fools' Guild platform.",
+    "Cade Ryan — Dublin-born software engineer in Vancouver, BC. Engineering Manager at Aritzia; previously Microsoft and co-founder of Koduu. Builder of The Fools' Guild platform and VoxMail.",
 };
 
 const facts = [
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 Vancouver&rsquo;s fantasy improv troupe, and built the platform
                 that runs its shows and box office. And I make my own products —
                 like VoxMail, a voice-messaging widget designed with Susanne
-                Duswald. You can talk to it on my contact page.
+                Duswald.
               </p>
             </div>
 
